@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderNavFooter.master.cs" Inherits="BTL_BaoDienTu.HeaderNavFooter" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="asset/css/header_nav_footer_style.css" />
+    <link rel="stylesheet" href="font/fontawesome-free-6.1.1-web/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li class="text_logo">
+                    <a href="trangchu.aspx" title="Trang chủ">
+                        <h2>F News</h2>
+                    </a>
+                </li>
+                <li class="active home" id="activehome">
+                    <a class="link home" href="trangchu.aspx" title="Trang chủ">
+                        <h4>Trang chủ</h4>
+                        <%--<h2><i class="fa-solid fa-house"></i></h2>--%>
+                    </a>
+                </li>
+                <li class="khoahoc">
+                    <a class="link 1" href="khoahoc_congnghe.aspx" title="Khoa học & Công nghệ">
+                        <h4>Khoa học & Công nghệ</h4>
+                    </a>
+                </li>
+                <li class="xahoi">
+                    <a class="link 2" href="xahoi.aspx" title="Xã hội">
+                        <h4>Xã hội</h4>
+                    </a>
+                </li>
+                <li class="thethao">
+                    <a class="link 3" href="thethao.aspx" title="Thể thao">
+                        <h4>Thể thao</h4>
+                    </a>
+                </li>
+
+
+                <%------------------%>
+
+                <%--<li>
+            <form action="trangchu.aspx" method="post" id="form1" runat="server">
+                <input name="inputsearch" type="text" placeholder="tìm kiếm" required="required" />
+                <button type="submit" title="tìm kiếm">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </li>--%>
+                <%------------------%>
+
+
+                <li>
+                    <a class="link personal" href="login_register.aspx" title="Đăng nhập">
+                        <h3><i class="fa-solid fa-user"></i></h3>
+                        <%--<i class="fa-regular fa-user"></i>--%>
+                    </a>
+                </li>
+                <li class="publish">
+                    <a href="dangbai.aspx" title="Đăng bài">
+                        <i class="fa-solid fa-pen"></i>
+                        <%--<i class="fa-light fa-user"></i>--%>
+                    </a>
+                </li>
+                <li class="logout">
+
+                    <form action="logout.aspx" method="post" id="form1806">
+                        <button type="submit" title="Đăng xuất">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </form>
+
+                </li>
+
+                <li id="registeredUsers">
+                    <a href="#" title="Số lượng người dùng">
+                        <h5>0 user đăng ký</h5>
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </header>
+    <section class="main_content">
+        <section class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </section>
+    </section>
+    <footer>
+        <ul class="child_footer1">
+            <li>
+                <h1 class="text_logo">F News</h1>
+            </li>
+            <li class="social">
+                <a href="https://www.facebook.com/fithou.edu.vn">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://hou.edu.vn/">
+                    <i class="fa-solid fa-earth-asia"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+        <hr />
+        <ul class="child_footer2">
+            <li>
+                <h3>Nguồn cung cấp thông tin đáng tin cậy của mọi nhà</h3>
+            </li>
+            <li>
+                <a href="#header" title="Quay về đầu trang">Quay về đầu trang</a>
+            </li>
+            <%--<input type="color" id="background_change" />--%>
+        </ul>
+    </footer>
+    <script type="text/javascript">
+        const publishBtn = document.querySelector(".publish");
+        const logoutBtn = document.querySelector(".logout");
+        const personalBtn = document.querySelector(".link.personal");
+        //const bg_change = document.querySelector("#background_change");
+        //const body = document.querySelector("body");
+
+        /*        console.log(document.cookie.slice(11,16));*/
+        if (document.cookie.slice(11, 16) != "") {
+            publishBtn.classList.add("active");
+            logoutBtn.classList.add("active");
+            personalBtn.classList.remove("active");
+        } else {
+            publishBtn.classList.remove("active");
+            logoutBtn.classList.remove("active");
+            personalBtn.classList.add("active");
+        }
+        //bg_change.addEventListener("change", () => {
+        //    body.style.backgroundColor = bg_change.value;
+        //})
+    </script>
+</body>
+</html>

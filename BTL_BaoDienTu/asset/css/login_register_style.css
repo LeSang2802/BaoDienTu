@@ -1,0 +1,30 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.bodyTCCT {
+    margin: 0 auto;
+    height: 57vh;
+}
+
+.formdn {
+    margin-right: 20px;
+}
+
+input[type=text], input[type=password], button[type=submit] {
+    margin-left: 4px;
+    padding: 4px;
+}
+
+button[type=submit] {
+    cursor: pointer;
+}
+
+.tableTCCT * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.input-invalid {
+    border: 1px solid red;
+}
